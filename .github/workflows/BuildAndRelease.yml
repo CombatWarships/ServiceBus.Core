@@ -10,7 +10,7 @@ jobs:
     timeout-minutes: 15
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       
    # - name: Verify commit exists in origin/main
    #   run: |
@@ -33,6 +33,7 @@ jobs:
       run: dotnet pack --configuration Release /p:Version=${VERSION} --no-build --output .
       
     - name: Push
-      run: dotnet nuget push NuGet.Workflow.${VERSION}.nupkg --source https://nuget.pkg.github.com/CombatWarships/index.json --api-key ${GITHUB_TOKEN}
+      #run: dotnet nuget push NuGet.Workflow.${VERSION}.nupkg --source https://nuget.pkg.github.com/CombatWarships/index.json --api-key ${GITHUB_TOKEN}
+      run: dotnet nuget push PackageInfo.nuget --source https://nuget.pkg.github.com/CombatWarships/index.json --api-key ${GITHUB_TOKEN}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
