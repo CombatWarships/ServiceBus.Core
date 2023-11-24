@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
-	  <PackageId>ServiceBus.Core</PackageId>
+	  <PackageId>CombatWarships.ServiceBus.Core</PackageId>
 	  <Version>1.0.0</Version>
 	  <Authors>Justin</Authors>
 	  <Company>CombatWarships</Company>
