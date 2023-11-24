@@ -1,3 +1,4 @@
+name: Build & Deploy
 on:
   workflow_dispatch:
   push:
