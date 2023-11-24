@@ -41,6 +41,8 @@ jobs:
         path: bin/Release/ 
         
   release:
+    permissions:
+      packages: write
     runs-on: ubuntu-latest    
     needs: build
     
