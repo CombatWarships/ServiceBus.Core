@@ -39,5 +39,6 @@ jobs:
     - name: Prep packages
       run: dotnet nuget add source --username CombatWarships --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/CombatWarships/index.json"
       
-    - name: Push
-      run: dotnet nuget push bin/Release/ServiceBus.Core.1.0.0.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source "github"
+    - name: Publish to GitHub packages 
+      run: dotnet nuget push bin/Release/ServiceBus.Core.1.0.0.nupkg --api-key ${{ secrets.GITHUB_TOKEN }}  --source "github"
+
