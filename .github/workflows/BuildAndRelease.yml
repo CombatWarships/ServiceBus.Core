@@ -24,15 +24,19 @@ jobs:
       
       
     - name: Build
-      run: dotnet build --configuration Release /p:Version=${VERSION}
+      #run: dotnet build --configuration Release /p:Version=${VERSION}
+      run: dotnet build --configuration Release
       
     - name: Test
-      run: dotnet test --configuration Release /p:Version=${VERSION} --no-build
+      #run: dotnet test --configuration Release /p:Version=${VERSION} --no-build
+      run: dotnet test --configuration Release --no-build
       
     - name: Pack
-      run: dotnet pack --configuration Release /p:Version=${VERSION} --no-build --output .
+      #run: dotnet pack --configuration Release /p:Version=${VERSION} --no-build --output .
+      run: dotnet pack --configuration Release --no-build --output .
       
     - name: Push
-      run: dotnet nuget push bin/Release/ServiceBus.Core.1.0.0.nupkg --source https://nuget.pkg.github.com/CombatWarships/index.json --api-key ${GITHUB_TOKEN}
+      #run: dotnet nuget push bin/Release/ServiceBus.Core.1.0.0.nupkg --source https://nuget.pkg.github.com/CombatWarships/index.json --api-key ${GITHUB_TOKEN}
+      run: dotnet nuget push bin/Release/ServiceBus.Core.1.0.0.nupkg --source "github" --api-key ${GITHUB_TOKEN}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
