@@ -1,5 +1,0 @@
-﻿ <PropertyGroup>
-    <PackageId>NuGet.Workflow</PackageId>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/CombatWarships/ServiceBus.Core</RepositoryUrl>
-  </PropertyGroup>
